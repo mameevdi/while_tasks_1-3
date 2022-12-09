@@ -36,12 +36,12 @@ public class Main {
         System.out.println("Задача 3"); //Рассчитайте, какая численность населения будет через 10 лет
         double PopulationSize = 12_000_000;
         DecimalFormat df = new DecimalFormat("#");
-        System.out.println("Численность населения равна: " + df.format(PopulationSize));
+        System.out.println("Численность населения равна " + df.format(PopulationSize));
         for (int i = 1; i <= 10; i++) {
             var BornInYear = PopulationSize/1000*17;
             var DiedInYear = PopulationSize/1000*8;
             PopulationSize = PopulationSize+(BornInYear-DiedInYear);
-            System.out.println("На " + i + "-й год население города составило: " + df.format(PopulationSize) + " человек. Родились " + df.format(BornInYear) + " человека, умерли " + df.format(DiedInYear)+ " человека.");
+            System.out.println("На " + i + "-й год население города составило " + df.format(PopulationSize) + " человек. Родились " + df.format(BornInYear) + " человека, умерли " + df.format(DiedInYear)+ " человека.");
         }
         if (PopulationSize>12_000_000){
             var total = PopulationSize-12_000_000;
