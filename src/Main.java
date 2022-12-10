@@ -11,7 +11,8 @@ public class Main {
         int capital = 15_000;
         int total = 0;
         int month = 0;
-        while (total < 2_459_000) {
+        int purposeAccumulation = 2_459_000;
+        while (total < purposeAccumulation) {
             total = total + capital;
             month++;
         }
@@ -34,21 +35,22 @@ public class Main {
     }
     public static void task3() {
         System.out.println("Задача 3"); //Рассчитайте, какая численность населения будет через 10 лет
-        double PopulationSize = 12_000_000;
+        double populationSize = 12_000_000;
+        double changPopulationSize = 12_000_000;
         DecimalFormat df = new DecimalFormat("#");
-        System.out.println("Численность населения равна " + df.format(PopulationSize));
-        for (int i = 1; i <= 10; i++) {
-            var BornInYear = PopulationSize/1000*17;
-            var DiedInYear = PopulationSize/1000*8;
-            PopulationSize = PopulationSize+(BornInYear-DiedInYear);
-            System.out.println("На " + i + "-й год население города составило " + df.format(PopulationSize) + " человек. Родились " + df.format(BornInYear) + " человека, умерли " + df.format(DiedInYear)+ " человека.");
+        System.out.println("Численность населения равна " + df.format(changPopulationSize));
+        for (int year = 1; year <= 10; year++) {
+            var bornInYear = changPopulationSize/1000*17;
+            var diedInYear = changPopulationSize/1000*8;
+            changPopulationSize = changPopulationSize+(bornInYear-diedInYear);
+            System.out.println("На " + year + "-й год население города составило " + df.format(changPopulationSize) + " человек. Родились " + df.format(bornInYear) + " человека, умерли " + df.format(diedInYear)+ " человека.");
         }
-        if (PopulationSize>12_000_000){
-            var total = PopulationSize-12_000_000;
+        if (changPopulationSize>populationSize){
+            var total = changPopulationSize-populationSize;
             System.out.println("Население за 10 лет выросло на " + df.format(total) + " человек");
         }
         else {
-            var total = 12_000_000 - PopulationSize;
+            var total = populationSize - changPopulationSize;
             System.out.println("Население за 10 лет сократилось на " + df.format(total) + " человек");
         }
     }
